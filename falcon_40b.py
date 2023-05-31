@@ -2,7 +2,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import transformers
 import torch
 
-model = "tiiuae/falcon-7b"
+model = "tiiuae/falcon-40b"
 
 rrmodel = AutoModelForCausalLM.from_pretrained(model, 
     torch_dtype=torch.bfloat16,
