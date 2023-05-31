@@ -2,8 +2,8 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import transformers
 import torch
 
-model = "tiiuae/falcon-7b"
-# model = "tiiuae/falcon-40b"
+# model = "tiiuae/falcon-7b"
+model = "tiiuae/falcon-40b"
 
 rrmodel = AutoModelForCausalLM.from_pretrained(model, 
     torch_dtype=torch.bfloat16,
@@ -13,7 +13,7 @@ rrmodel = AutoModelForCausalLM.from_pretrained(model,
 
 tokenizer = AutoTokenizer.from_pretrained(model)
 
-input_text = "I want all books and you get the rest"
+input_text = "predict the dialogue act of the utterance 'i want the books and you take the rest' "
 input_ids = tokenizer.encode(input_text, return_tensors='pt')
 
 attention_mask = torch.ones(input_ids.shape)
