@@ -3,11 +3,11 @@
 Dependency:
 
 # Transformers installation
-# ! pip install transformers datasets
+
+pip install transformers==4.27.4
 pip install torch
 pip install einops
 pip install accelerate
-pip install transformers==4.27.4
 pip install huggingface-hub
 pip install chardet
 pip install cchardet
