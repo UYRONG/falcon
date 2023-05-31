@@ -16,8 +16,7 @@ eval "$(conda shell.bash hook)"
 conda activate falcon
 
 # run
-echo ""
-echo "Running test predictions with model size ${MODEL_SIZE}"
+echo "running"
 echo ""
 
 python3 falcon_7b.py
