@@ -15,9 +15,9 @@ tokenizer = AutoTokenizer.from_pretrained(model)
 
 print("----"*10)
 print("Input:")
-input_text = "Tell me the dialogue action annotation of the utterance 'i want the books and you take the rest' from the following options: propose, agree, greet "
+# input_text = "Tell me the dialogue action annotation of the utterance 'i want the books and you take the rest' from the following options: propose, agree, greet "
 
-# input_text = "Tell me the best category for annotation  'i want the books and you take the rest' "
+input_text = "utterance: YOU: i would like 4 hats and you can have the rest . <eos> annotation: propose book = 0 hat = 4 ball = 0 utterance: THEM: if i can have the hats and the books you can have the ball <eos>  annotation: propose book = 0 hat = 4 ball = 0 utterance: YOU: so you want me to only have the ball ? no deal make me a better offer <eos>  annotation: propose book = 0 hat = 4 ball = 0 utterance: THEM: i will take the hats and two books and you can have the rest <eos> annotation: "
 
 
 print(input_text)
