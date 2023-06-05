@@ -12,7 +12,12 @@ rrmodel = AutoModelForCausalLM.from_pretrained(model,
 
 tokenizer = AutoTokenizer.from_pretrained(model)
 
+
+print("----"*10)
+print("Input:")
 input_text = "predict the dialogue act of the utterance 'i want the books and you take the rest' "
+print(input_text)
+print("----"*10)
 input_ids = tokenizer.encode(input_text, return_tensors='pt')
 
 attention_mask = torch.ones(input_ids.shape)
@@ -26,5 +31,6 @@ output = rrmodel.generate(input_ids,
             eos_token_id=tokenizer.eos_token_id,)
 
 output_text = tokenizer.decode(output[0], skip_special_tokens=True)
-
+print("Output:")
 print(output_text)
+print("----"*10)
