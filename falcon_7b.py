@@ -15,7 +15,11 @@ tokenizer = AutoTokenizer.from_pretrained(model)
 
 print("----"*10)
 print("Input:")
-input_text = "predict the dialogue action of the utterance 'i want the books and you take the rest' "
+input_text = "Tell me the dialogue action annotation of the utterance 'i want the books and you take the rest' from the following options: propose, agree, greet "
+
+# input_text = "Tell me the best category for annotation  'i want the books and you take the rest' "
+
+
 print(input_text)
 print("----"*10)
 input_ids = tokenizer.encode(input_text, return_tensors='pt')
