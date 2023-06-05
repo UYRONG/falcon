@@ -8,7 +8,8 @@ rrmodel = AutoModelForCausalLM.from_pretrained(model,
     torch_dtype=torch.bfloat16,
     trust_remote_code=True,
     device_map="auto",
-    offload_folder="offload")
+    offload_folder="offload",
+    cache_dir="/scratch1/yrong016")
 
 tokenizer = AutoTokenizer.from_pretrained(model)
 
