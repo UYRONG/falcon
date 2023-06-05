@@ -3,8 +3,8 @@
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:v100:1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=16
-#SBATCH --time=00:20:00
+#SBATCH --cpus-per-task=32
+#SBATCH --time=00:30:00
 
 # Change to proper directory
 cd ..
