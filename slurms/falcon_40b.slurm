@@ -1,7 +1,5 @@
 #!/bin/bash
 #SBATCH --account=glucas_540
-#SBATCH --partition=gpu
-#SBATCH --gres=gpu:v100:2
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --time=00:30:00
