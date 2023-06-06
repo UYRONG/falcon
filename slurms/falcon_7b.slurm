@@ -16,8 +16,7 @@ eval "$(conda shell.bash hook)"
 conda activate falcon
 
 # run
-echo "running"
-echo ""
+echo "Running"
 
 python3 falcon_7b.py
 
