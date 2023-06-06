@@ -34,8 +34,6 @@ output = rrmodel.generate(input_ids,
 
 output_text = tokenizer.decode(output[0], skip_special_tokens=True)
 
-print(output_text)
-
 print("Output:")
 print(output_text)
 print("----"*10)
