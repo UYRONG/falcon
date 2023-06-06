@@ -1,14 +1,10 @@
 #!/bin/bash
 #SBATCH --account=glucas_540
 #SBATCH --partition=gpu
-#SBATCH --gpus-per-task=2
-#SBATCH --nodes=1
+#SBATCH --gres=gpu:v100:2
 #SBATCH --ntasks=1
-#SBATCH --gres=gpu:v100:1
-#SBATCH --gpus-per-task=a40:1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
-#SBATCH --time=00:30:00
+#SBATCH --cpus-per-task=32
+#SBATCH --time=00:20:00
 
 # Change to proper directory
 cd ..
