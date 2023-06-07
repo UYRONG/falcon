@@ -2,7 +2,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import transformers
 import torch
 
-def generate(input_text,rrmodel,tokenizer):
+def generate(input_text, tokenizer, rrmodel):
     print("----"*10)
     print("Input:")
     print(input_text)
@@ -39,18 +39,47 @@ def main():
         offload_folder="offload",
         cache_dir="/scratch1/yrong016")
 
+    print('*'*50)
+    print(rrmodel.device_map)
+    print('*'*50)
+
     tokenizer = AutoTokenizer.from_pretrained(model)
 
-    file1 = open('prompt.txt', 'r')
-    Lines = file1.readlines()[0:3]
+    prompts = [
+        # For these prompts, the expected answer is the natural continuation of the prompt
+        "I believe the meaning of life is",
+        "Simply put, the theory of relativity states that ",
+        "Building a website can be done in 10 simple steps:\n",
+        # Few shot prompts: https://huggingface.co/blog/few-shot-learning-gpt-neo-and-inference-api
+        """Tweet: "I hate it when my phone battery dies."
+Sentiment: Negative
+###
+Tweet: "My day has been 👍"
+Sentiment: Positive
+###
+Tweet: "This is the link to the article"
+Sentiment: Neutral
+###
+Tweet: "This new music video was incredibile"
+Sentiment:""",
+        """Translate English to French:
+
+sea otter => loutre de mer
+
+peppermint => menthe poivrée
+
+plush girafe => girafe peluche
+
+cheese =>""",
+    ]
 
     count = 0
 
-    for line in Lines:
+    for line in prompts:
         count += 1
         input_text = line.strip()
         print("EXAMPLE " + str(count) + ":")
-        generate(input_text,rrmodel,tokenizer)
+        generate(input_text, tokenizer, rrmodel)
 
 if __name__ == "__main__":
     main()
