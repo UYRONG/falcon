@@ -27,7 +27,7 @@ def generate(input_text,rrmodel,tokenizer):
     print("----"*10)
 
 
-def main(argv):
+def main():
     model = "tiiuae/falcon-40b"
 
     rrmodel = AutoModelForCausalLM.from_pretrained(model, 
