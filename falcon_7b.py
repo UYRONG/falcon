@@ -1,6 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import transformers
 import torch
+import time
 
 def generate(input_text,rrmodel,tokenizer):
     print("----"*10)
@@ -15,7 +16,7 @@ def generate(input_text,rrmodel,tokenizer):
 
     output = rrmodel.generate(input_ids, 
                 attention_mask=attention_mask, 
-                max_length=300,
+                max_length=800,
                 do_sample=True,
                 top_k=10,
                 num_return_sequences=1,
@@ -30,6 +31,7 @@ def generate(input_text,rrmodel,tokenizer):
 
 
 def main():
+    start_time = time.time()
     model = "tiiuae/falcon-7b"
 
     rrmodel = AutoModelForCausalLM.from_pretrained(model, 
@@ -51,6 +53,11 @@ def main():
         input_text = line.strip()
         print("EXAMPLE " + str(count) + ":")
         generate(input_text,rrmodel,tokenizer)
+
+    end_time = time.time()
+    execution_time = end_time - start_time
+
+    print("Execution Time:", execution_time, "seconds")
 
 if __name__ == "__main__":
     main()
