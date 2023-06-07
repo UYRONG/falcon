@@ -18,6 +18,6 @@ conda activate falcon
 # run
 echo "Running"
 
-python3 falcon_40b.py 5 6
+python3 falcon_40b.py
 
 echo "DONE"

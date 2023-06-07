@@ -1,7 +1,6 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import transformers
 import torch
-import sys
 
 def generate(input_text,rrmodel,tokenizer):
     print("----"*10)
@@ -41,7 +40,7 @@ def main(argv):
     tokenizer = AutoTokenizer.from_pretrained(model)
 
     file1 = open('prompt.txt', 'r')
-    Lines = file1.readlines()[argv[0]-1 : argv[1]]
+    Lines = file1.readlines()[4:6]
 
     count = 0
 
@@ -52,4 +51,4 @@ def main(argv):
         generate(input_text,rrmodel,tokenizer)
 
 if __name__ == "__main__":
-    main(sys.argv()[1:])
+    main()
