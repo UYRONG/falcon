@@ -18,6 +18,7 @@ def generate(input_text,rrmodel,tokenizer):
                 do_sample=True,
                 top_k=10,
                 num_return_sequences=1,
+                pad_token_id=tokenizer.eos_token_id,
                 eos_token_id=tokenizer.eos_token_id,)
 
     output_text = tokenizer.decode(output[0], skip_special_tokens=True)
@@ -40,7 +41,7 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(model)
 
     file1 = open('prompt.txt', 'r')
-    Lines = file1.readlines()[4:6]
+    Lines = file1.readlines()[0:3]
 
     count = 0
 
