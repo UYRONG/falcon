@@ -47,7 +47,7 @@ def main():
     for line in Lines:
         count += 1
         input_text = line.strip()
-        print("EXAMPLE " + count + ":")
+        print("EXAMPLE " + str(count) + ":")
         generate(input_text,rrmodel,tokenizer)
 
 if __name__ == "__main__":
