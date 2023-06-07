@@ -37,7 +37,7 @@ def main():
         trust_remote_code=True,
         device_map="auto",
         offload_folder="offload",
-        cache_dir="/scratch1/yrong016")
+        cache_dir="./hf_cache")
 
     print('*'*50)
     print(rrmodel.device_map)
