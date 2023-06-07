@@ -8,8 +8,8 @@ def generate(input_text,rrmodel,tokenizer):
     print(input_text)
     print("----"*10)
 
-    input_ids = input_ids.to('cuda')
     input_ids = tokenizer.encode(input_text, return_tensors='pt')
+    input_ids = input_ids.to('cuda')
 
     attention_mask = torch.ones(input_ids.shape)
 
