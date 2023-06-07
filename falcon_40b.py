@@ -40,7 +40,7 @@ def main():
         cache_dir="./hf_cache")
 
     print('*'*50)
-    print(rrmodel.device_map)
+    print(rrmodel.hf_device_map)
     print('*'*50)
 
     tokenizer = AutoTokenizer.from_pretrained(model)
