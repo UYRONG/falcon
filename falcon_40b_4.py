@@ -40,7 +40,7 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(model)
 
     file1 = open('prompt.txt', 'r')
-    Lines = file1.readlines()[16:18]
+    Lines = file1.readlines()[18:20]
 
     count = 0
 
