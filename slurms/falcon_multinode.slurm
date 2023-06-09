@@ -37,7 +37,7 @@ echo ""
 
 srun accelerate launch \
 --num_machines 2 \
---nproc_per_node 2 \
+--num_processes 2 \
 --same_network \
 --rdzv_id $RANDOM \
 --rdzv_backend c10d \
