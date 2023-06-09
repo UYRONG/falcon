@@ -35,14 +35,12 @@ echo ""
 echo "Running test predictions with falcon 40B on multiple slurm nodes"
 echo ""
 
-srun accelerate launch \
---num_machines 2 \
---num_processes 2 \
---same_network \
+srun torchrun \
+--nnodes 2 \
+--nproc_per_node 2 \
 --rdzv_id $RANDOM \
 --rdzv_backend c10d \
---main_process_ip $head_node_ip \
---main_process_port 29500 \
+--rdzv_endpoint $head_node_ip:29500 \
 falcon_40b_mn.py
 
 echo "DONE"
