@@ -36,7 +36,7 @@ echo "Running test predictions with falcon 40B on multiple slurm nodes"
 echo ""
 
 srun accelerate launch \
---nnodes 2 \
+--num_machines 2 \
 --nproc_per_node 2 \
 --same_network \
 --rdzv_id $RANDOM \
